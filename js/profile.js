@@ -5,7 +5,9 @@ $(document).ready(function () {
         event.preventDefault();
         if ($('#user_new_password').val() != '') {
             if ($('#user_new_password').val() != $('#user_re_enter_password').val()) {
-                $('#error_password').html('<label class="text-danger">Password Not Match</label>');
+                setTimeout(function () {
+                    $('#error_password').html('<br><label class="alert alert-danger">Password Not Match</label>').fadeIn(1000).delay(1000).fadeOut(3000);
+                });
                 return false;
             }
             else {
@@ -23,7 +25,10 @@ $(document).ready(function () {
                 $('#edit_prfile').attr('disabled', false);
                 $('#user_new_password').val('');
                 $('#user_re_enter_password').val('');
-                $('#message').html(data);
+                setTimeout(function () {
+                    $('#message').html(data).fadeIn(1000).delay(1000).fadeOut(3000);
+                });
+
             }
         })
     });

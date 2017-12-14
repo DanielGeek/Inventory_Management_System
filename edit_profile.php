@@ -26,7 +26,7 @@ if(isset($_POST['user_name'])){
     $statement->execute();
     $result = $statement->fetchAll();
     if(isset($result)){
-        echo '<div class="alert alert-success">Profile Edited</div>';
+        echo '<label class="alert alert-success">Profile Edited</label>';
     }
 }
 
