@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/user.js"></script>
 </head>
 <body>
     <br>
