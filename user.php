@@ -1,4 +1,5 @@
 <?php
+
 //user.php
 
 include('database_connection.php');
@@ -87,7 +88,7 @@ include('header.php');
 
             </div>
         </div>
-
+        </div>
         <?php
 
         // include('footer.php');

@@ -2,6 +2,14 @@
 
 $(document).ready(function(){
 
+    
+    $('#add_button').click(function(){
+		$('#user_form')[0].reset();
+		$('.modal-title').html("<i class='fa fa-plus'></i> Add User");
+		$('#action').val("Add");
+		$('#btn_action').val("Add");
+	});
+
     var userdataTable = $('#user_data').DataTable({
         "processing": true,
         "serverSide": true,
@@ -18,4 +26,23 @@ $(document).ready(function(){
         ],
         "pageLength": 25
     });
-})
+
+    $(document).on('submit', '#user_form', function(event){
+        event.preventDefault();
+        $('#action').attr('disabled','disabled');
+        var form_data = $(this).serialize();
+        $.ajax({
+         url:"user_action.php",
+         method:"POST",
+         data:form_data,
+         success:function(data)
+         {
+          $('#user_form')[0].reset();
+          $('#userModal').modal('hide');
+          $('#alert_action').fadeIn(1000).html('<div class="alert alert-success">'+data+'</div>').delay(1000).fadeOut(3000);
+          $('#action').attr('disabled', false);
+          userdataTable.ajax.reload();
+         }
+        })
+       });
+});
