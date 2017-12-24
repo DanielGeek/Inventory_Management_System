@@ -17,6 +17,7 @@
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/user.js"></script>
+    <script src="js/category.js"></script>
 </head>
 <body>
     <br>
