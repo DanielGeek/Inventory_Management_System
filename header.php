@@ -12,7 +12,8 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/dataTables.bootstrap.min.js"></script>		
-	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.css">
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/user.js"></script>
