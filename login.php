@@ -31,14 +31,14 @@ if(isset($_POST["login"])){
                     $_SESSION['user_name'] = $row['user_name'];
                     header("location:index.php");
                 } else {
-                    $message = "<label>Your account is disabled, Contact Admin</label>";
+                    $message = "<label class='alert alert-danger'>Your account is disabled, Contact Admin</label>";
                 }
             } else {
-                $message = "<label>Wrong Password</label>";
+                $message = "<label class='alert alert-danger'>Wrong Password</label>";
             }
         }
     } else {
-        $message = "<label>Wrong Email Address</label>";
+        $message = "<label class='alert alert-danger'>Wrong Email Address</label>";
     }
 }
 ?>

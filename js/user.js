@@ -67,4 +67,24 @@ $(document).ready(function(){
                }
            })
        });
+
+       $(document).on('click', '.delete', function(){
+            var user_id = $(this).attr("id");
+            var status = $(this).data('status');
+            var btn_action = "delete";
+            if(confirm("Are you sure you want to change status?")){
+                    $.ajax({
+                        url:"user_action.php",
+                        method:"POST",
+                        data:{user_id:user_id, status:status,
+                            btn_action:btn_action},
+                        success:function(data){
+                            $("#alert_action").fadeIn(1000).html('<div class="alert alert-info">'+data+'</div>').delay(1000).fadeOut(3000);
+                            userdataTable.ajax.reload();
+                        }
+                    })
+            } else {
+
+            }
+       });
 });

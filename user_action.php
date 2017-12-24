@@ -74,6 +74,33 @@ if(isset($_POST['btn_action']))
         }
 
     }
+
+    if($_POST['btn_action'] == 'delete'){
+        
+        $status = 'Active';
+        if($_POST['status'] == 'Active'){
+            
+            $status = 'Inactive';
+        }
+        $query = "
+            update user_details
+            set user_status = :user_status
+            where user_id = :user_id
+        ";
+        $statement = $connect->prepare($query);
+        $statement->execute(
+            array(
+                ':user_status'  => $status,
+                ':user_id'      => $_POST["user_id"]
+                )
+            );
+            
+        $result = $statement->fetchAll();
+        if(isset($result)){
+            
+            echo 'User Status change to ' . $status;
+        }
+    }
 }
 
 ?>
